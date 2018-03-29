@@ -1,0 +1,54 @@
+/* pages/components/matter/index.wxss */
+/* 弹出框输入待办事项 */
+.flex{display: flex;}
+.flex-row{flex-direction: row;}
+.flex-col{flex-direction: column;}
+.flex-wrap{flex-wrap: wrap;}
+.flex-justify-start {justify-content:flex-start;}
+.flex-justify-end {justify-content:flex-end;}
+.flex-justify-center {justify-content:center;}
+.flex-justify-between {justify-content:space-between;}
+.flex-justify-around {justify-content:space-around;}
+.flex-align-start {align-items:flex-start;}
+.flex-align-center {align-items:center;}
+.flex-align-end {align-items:flex-end;}
+.form-content{
+  background: #f5f5f5;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  padding: 20rpx 0;
+}
+.form-content .form-title{
+  text-align: center;
+  border-bottom: 1rpx solid #dfdfdf;
+  padding: 20rpx 0;
+  background: #fff;
+}
+.form-item{
+  padding:15rpx 20rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.form-item .item-name{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.form-item .item-input{
+  width: 450rpx;
+  height: 60rpx;
+  padding: 10rpx 0 10rpx 10rpx;
+  border-radius: 10rpx;
+}
+.form-item .item-textarea{
+  width: 450rpx;
+  min-height: 60rpx;
+  padding: 10rpx 0 10rpx 10rpx;
+  border-radius: 10rpx;
+}
+button.other-button-hover{
+  border-color: transparent;
+  background: #3cc;
+  color: #fff;
+}

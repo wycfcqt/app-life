@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/weather/weather",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f1f3fa",
+    "navigationBarTitleText": "生活预报",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "color": "#8590a6",
+    "selectedColor": "#1d7373",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "日历",
+      "iconPath": "pages/assets/icon_3_01.png",
+      "selectedIconPath": "pages/assets/icon_3_02.png"
+    },{
+      "pagePath": "pages/weather/weather",
+      "text": "天气",
+      "iconPath": "pages/assets/icon_1_01.png",
+      "selectedIconPath": "pages/assets/icon_1_02.png"
+    }
+    ]
+  }
+}

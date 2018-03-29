@@ -1,0 +1,41 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+view{box-sizing: border-box;}
+.calendar{width: 100%;height: auto;background: #fff;}
+.calendar-header{height: 100rpx;}
+.title-left{width: 75%;}
+.title-left image{width: 48rpx;height:48rpx;}
+.title-right{width:25%;text-align: center;}
+.weeks{color: #fff;padding: 10rpx 0;background-color: #5cc;}
+
+.days .day{width: 14.285%; height: 100rpx; line-height: 100rpx; transition: all .35s;text-align: center;border-right:1rpx solid #ddd; border-bottom:1rpx solid #ccc;}
+.days .day.now{background: #5cc;color: #fff;}
+.days .days-other{color: #9c9c9c;background: #fafafa;}
+.days .active{color: #f00;}
+/* 第几周 */
+.day-detail{margin: 20rpx 0;background: #fff;padding: 20rpx;}
+.detail-date{background: #099;color: #fff;width:120rpx; font-weight: 700;margin-right: 20rpx;padding: 20rpx 0;text-align: center; border-radius: 10rpx;font-size: 60rpx;}
+.detail-text text{margin-right: 20rpx;font-size: 32rpx;}
+.detail-text .row-one text{color: #666;}
+.detail-text .row-two{margin-top: 10rpx;}
+.detail-text .row-two text{color: #9c9c9c;}
+

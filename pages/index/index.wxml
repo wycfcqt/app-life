@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">Hello {{userInfo.nickName}},欢迎您！！！</text>
+  </view>
+</view> -->
+<!-- calendar -->
+<view class="calendar">
+  <view class="calendar-header flex flex-row flex-align-center">
+    <view class="calender-title title-left flex flex-row flex-justify-around">
+      <view data-handle="prev" bindtap="handleMonth">
+        <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAD5UlEQVRoQ81azVXbQBCeAUvXkAriVBCoIKaCQAUJFQCX3ccp5MTTcrCpIE4FIRXEVBBTAaSCOFdAnrxPb+XIsmRJq5VBFx+snZ1vfr6ZnRWTh2c4HO48PT29J6Ld+Xy+y8w7ItJn5j7Ei8g9M9+LyGxra2tKRNNer3dzeno6a7s9uwqA0g8PDx+Y+RMRDRzlTERkHIbhD1cwjQFYax+LyAkR7Tgqnl82Y+ZRr9e7agqkEQBjzDERnXtUfAUI5CulruoaphaAi4uL/vb29tcWoVJXn/S9aRzHh2dnZ/dVCysBXF5eDkTke4dWL9NxJiJHWuvrdSDWAjDGIEFh+ed8jpRS4zIFSgG8EOVTvUtBFAKwYfPzOc2e31tEDovCaQWATdhfzxDzVfaaxXG8l0/sFQDGGCi/WyXN5X8RuUWVJqI3LutRwZVSe9m1SwCiKDph5qGj8KplSRzbCo7W4lXVgqL/ReRUaz1K/1sAgODHx8e7LkJHRL5prcFoyWOMmRAReieXZxYEwdu0Yi8ARFF0zsyfXSSuW5NX3oehROSL1hodASUAfAgtcfet1nqRT3YfsFvbHFt4IQHQBecjYcMwHGSbM2MMiuIilFp6O8mpFACs4toSr+ghIn/DMOx3qDz2TBiJrVv/tLTGYjmUZ+aBUgoHl+Tpit2CIHjNURQdMDOaNV/PXlb5LsIzVRTVGQB8ss9Sz9J1SwI24pacnA2dpQJjjAHTILd8ndqKIuTGC4A812+wn5oCABLY2UolhcoH19fKSQCQWm+WvAQmyNFlZ81gkQpeAdhGbcLM79oYpclasBBGGk6dod1orJQ6SjdF/GN41VJmbQy+kniFgUQEnmhjmEoQyfnCF40S0UZrgEV347uQbawKA0BSyDy3EhjW7m+iD7IADr03c0S0dGKyzdyYmT9WBnXDF5Jmzm4A1vBJfdMgCPaz9SGKIq8gkMA4LHV2oMlPEDqoEf8PNG0nBWs8v1QjfIHIHpg6P9QTkfdCt3KohwU79ALEL9WINrUH1sc1Vjqh2/hgy5LGXXp/1pB4Eu5PRypYuzJajKLINyNldRyLyKCF8ktjmkIAm27G6nogHzrpusLxuufqXFfHte/VHq+nUrqcJjgganbB8cJAuF0xpSAQTuDyrnv7vFfsgOxk3f1YYRIXudcm9rXnfqk0ktDnzOfzAy/XrNldMCLERXRX3oDViWiU5fmqfKm8J84LsN7AhBm3OV6OjDZcxnEcj+pYPatTYwDpYjsUPsA3E66hhVBBfoVhOG76jcTaOlDltvz/to/CeB6f2uAXn9nkL/J+ExE+ucH10jQMw4mr0tn9/wGBx0/durUK9gAAAABJRU5ErkJggg=='></image>
+      </view>
+      <view class='flex flex-row flex-align-center flex-justify-around'>
+        <picker range='{{months}}' value='{{curMonth}}' range-key='name' bindchange='chooseMonth'>
+          <text>{{dataTime}}</text>
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABVklEQVRYR+2W302EQBCHZ0LC85VwdnCdeB1oB8oLGyogywvagXagnVwHXgn3TELWTCLmsi47f9bkjDleSGB25/d9TACECx944f5wDfA3DXjv94h4bNv28BszMgzDLoSwdc69xfslDfR9v62q6gMADiGEp7qu35umOWnCjOO4mabpFhEfAWA3z/NN13VHUQAq8t6/IOLd1wJqTumfOStECwAPALAHgA2tDyG8OufuUwCrM3BmIV73w0pMGy9Yo6e67BBGFuJ9Fyt0/Zs2LsrRswEyFsTjkKNnAyRmQdyYe/bLRux7oMQCRy8yYLXAPXuxASq0WJDQiw1oLUjpVQE0FqT0qgBSCxp6dQCJBQ29OgBnQUtvCpCzoKU3BVizYKE3B0hZsNCbA8QWrPRFAc4tWOmLAiwW6Lz2tyP5dLJfw9wmZIHup/71JM2LDUib5OqKDFwD/AsDnxFuzyGLqcXzAAAAAElFTkSuQmCC'
+            style='width:16px;height:16px;'></image>
+        </picker>
+      </view>
+      <view data-handle="next" bindtap="handleMonth">
+        <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAD2klEQVRoQ91aS1LbQBCdBkvbkBPEOUHwCWLfwJwg4QSBBTPFClhRkhc2Jwg5AfYJgk8Q5QTACeJsoVydeqqRo8/YkkczQDJVbLDV6tfd068/JuHgXF5ednd2dj4KIfaJaJ+Zu0TUzYtm5nsiwt+tECLpdDrz4+PjRdvXk62A8Xi89/T09EkI8RmKW8pJmHkShuHMFszWALS1vxARFN+zVLz82IKIJp1O52pbIFsBGI1GZ8x85FDxChAhxLmU8qqpYRoBiOMYIfK1Rag01Sf7XrJcLg9OT0/v6x6sBRDHMUJl7NHq63RcMPOhUmq6CcRGAFp5WP4lz6GU8nqdAmsBvBLlM73XgjACeGXKpyCY+cAUThUA+sJ+f4GYrwvTxXK57JUvtgnAjxbZ5oGZb4kIBOfjJFLKXl5wAUAURedEdGb55gcpZVo++AxBZj5WSk0yHVcAwLC7u7uwvi27zqWU/UywRxCLIAjeZ4y9AhBF0XVL11di1IFMYzAw84VS6hwfpgB0YXbXwvorBg2CYJCvZzyBWHkhBRBF0RERgW1dnMQAIiGiDy6E52Sk3JACiOO4TeYx6XUtpTzMPoCHHx8fkZ1cgriVUg5Ih88vx9aBOBMINDRvXL0rCIK35DFbgD0LKQ8kqXnCCQiwM7XM/U2MWahjRqNRn5nB9K0PshE8gB4V/ay3Q0SDk5MTvCc9Dr0+gwfuyg24ByRo3gdSyiST7SjzzeEB9qCwSWSBQXX6bk2ezwkAOhc4wkUGfFYAzPxTKbUawfxTAKB8GIb9UplxQ0RD2xBm5t/wADr/d7ZCmjyHF4Vh2M0rH8cxem0MDNqc9BJ7TaOplYj6HjIQgKdptE0TU2s9jxwApr8AgCER3dRqYvcFbywMddJSwkUmMGEz1UFCCKfDgrSY04TitF5n5m9KqdUFddCummw0k1IOs34AL3MygSsrrz0My9uO4NcF79+GRjccrWt1U6730Cwh9ldpOd/Ut8pGHnN9xQOVph7fcOCF8ljFBVGZlC+QYnmwZd3cYwcWhmEPbOuw3jfFfyE1V0aLURRZZyS9yEPt7/rCZkAKXsY/KwD0DgwgnPStdvxXfcp0x4wANC/4ZGdbTL18PZUJ+T8XHBk6z5exqSfsVkyZdBR7GFI9950wleEmxLVbSjykL/bU8WhwkwfmQRAMmyy9GwHIeQNLbjC2lwylrX60aStZRr0VgBxjAwhIzwkQKC6EwG8mJk2sngexNYDsYV1l4n6gkrWd7M2EENMgCKbbKl6bRpumiJxXsF5Kf26jFyXYl2XDggchBIYH2L5jOpfUbeCbvv8PoqolfzyYQNUAAAAASUVORK5CYII='></image>
+      </view>
+    </view>
+    <view class="calender-title title-right flex flex-row flex-justify-center flex-align-center">
+      <picker range-key='name' value="{{yearRange}}" range="{{years}}" bindchange="chooseYear">
+        <text>{{years[yearRange].name}}</text>
+        <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABVklEQVRYR+2W302EQBCHZ0LC85VwdnCdeB1oB8oLGyogywvagXagnVwHXgn3TELWTCLmsi47f9bkjDleSGB25/d9TACECx944f5wDfA3DXjv94h4bNv28BszMgzDLoSwdc69xfslDfR9v62q6gMADiGEp7qu35umOWnCjOO4mabpFhEfAWA3z/NN13VHUQAq8t6/IOLd1wJqTumfOStECwAPALAHgA2tDyG8OufuUwCrM3BmIV73w0pMGy9Yo6e67BBGFuJ9Fyt0/Zs2LsrRswEyFsTjkKNnAyRmQdyYe/bLRux7oMQCRy8yYLXAPXuxASq0WJDQiw1oLUjpVQE0FqT0qgBSCxp6dQCJBQ29OgBnQUtvCpCzoKU3BVizYKE3B0hZsNCbA8QWrPRFAc4tWOmLAiwW6Lz2tyP5dLJfw9wmZIHup/71JM2LDUib5OqKDFwD/AsDnxFuzyGLqcXzAAAAAElFTkSuQmCC'
+          style='width:16px;height:16px;'></image>
+      </picker>
+    </view>
+  </view>
+  <view class='weeks flex flex-row flex-alicn-center flex-justify-around'>
+    <view wx:for='{{weekList}}' wx:key='name'>{{item.value}}</view>
+  </view>
+  <view class="days flex flex-wrap flex-justify-between flex-align-center">
+    <view bindtap='showTime' data-index='{{item.index}}' data-date='{{item.date}}' wx:for='{{times}}' wx:key='index' class='{{item.another ? "day days-other" : item.now ? "day now" : "day"}}'>{{item.day}}</view>
+  </view>
+</view>
+<!-- 第几周 -->
+<view class='day-detail'>
+  <view class='flex flex-row flex-align-center'>
+    <text class='detail-date'>{{curDay < 10 ? '0' + curDay : curDay}}</text>
+    <view class='flex flex-col detail-text'>
+      <view class='flex flex-row row-one'>
+        <text>{{monthWeek.year}}年{{monthWeek.month}}月第{{monthWeek.week}}周</text>
+        <text>{{sign}}座</text>
+      </view>
+      <view class='row-two'>
+        <text>{{yearWeek.year}}年第{{yearWeek.week}}周</text>
+        <text>{{yearWeek.year}}年第{{yearWeek.day}}天</text>
+      </view>
+    </view>
+  </view>
+</view>
+<form-control></form-control>

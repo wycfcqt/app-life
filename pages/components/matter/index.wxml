@@ -1,0 +1,28 @@
+<!--pages/components/matter/index.wxml-->
+<!-- <text>pages/components/matter/index.wxml</text> -->
+<view class='form-content'>
+  <view class='form-title'>添加待办事项</view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='form-item flex flex-row flex-align-center'>
+      <view class='item-name'>名称</view>
+      <input placeholder-style='color:#9c9c9c;font-size: 28rpx;' class='item-input' placeholder="待办事项名称" />
+    </view>
+    <view class='form-item flex flex-row flex-align-center'>
+      <view class='item-name'>位置</view>
+      <input placeholder-style='color:#9c9c9c;font-size: 28rpx;' class='item-input' placeholder="添加位置" />
+    </view>
+    <view class='form-item flex flex-row flex-align-center'>
+      <view class='item-name'>内容</view>
+      <textarea class='item-textarea' placeholder-style='color:#9c9c9c;font-size: 28rpx;' auto-height placeholder="待办事项内容" />
+    </view>
+    <view class='form-item flex flex-row flex-align-center'>
+      <view class='item-name'>是否提醒</view>
+      <switch bindchange="switchMind" />
+    </view>
+    <view class='form-item flex flex-row flex-justify-center flex-align-center'>
+      <button type="warn" size="mini" form-type='reset'>取消</button>
+      <button type="primary" size="mini" plain='true' form-type='submit' hover-class="other-button-hover">确定</button>
+
+    </view>
+  </form>
+</view>
