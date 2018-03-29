@@ -24,6 +24,10 @@
       <textarea class='item-textarea' placeholder-style='color:#9c9c9c;font-size: 28rpx;' auto-height placeholder="待办事项内容" />
     </view>
     <view class='form-item flex flex-row flex-align-center'>
+      <view class='item-name'>内容2</view>
+      <textarea class='item-textarea' placeholder-style='color:#9c9c9c;font-size: 28rpx;' auto-height placeholder="待办事项内容22" />
+    </view>
+    <view class='form-item flex flex-row flex-align-center'>
       <view class='item-name'>是否提醒</view>
       <switch bindchange="switchMind" />
     </view>
