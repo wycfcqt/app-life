@@ -12,6 +12,14 @@
       <input placeholder-style='color:#9c9c9c;font-size: 28rpx;' class='item-input' placeholder="添加位置" />
     </view>
     <view class='form-item flex flex-row flex-align-center'>
+      <view class='item-name'>日期</view>
+      <text>2018-03-29</text>
+    </view>
+    <view class='form-item flex flex-row flex-align-center'>
+      <view class='item-name'>时间</view>
+      <text>09：30</text>
+    </view>
+    <view class='form-item flex flex-row flex-align-center'>
       <view class='item-name'>内容</view>
       <textarea class='item-textarea' placeholder-style='color:#9c9c9c;font-size: 28rpx;' auto-height placeholder="待办事项内容" />
     </view>
