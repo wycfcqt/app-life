@@ -29,7 +29,7 @@
     </view>
     <view class='form-item flex flex-row flex-align-center'>
       <view class='item-name'>是否提醒</view>
-      <switch bindchange="switchMind" />
+      <switch bindchange="switchMind" /> 
     </view>
     <view class='form-item flex flex-row flex-justify-center flex-align-center'>
       <button type="warn" size="mini" form-type='reset'>取消</button>
