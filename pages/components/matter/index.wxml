@@ -20,6 +20,10 @@
       <text>09：30</text>
     </view>
     <view class='form-item flex flex-row flex-align-center'>
+      <view class='item-name'>提示文字</view>
+      <textarea class='item-textarea' placeholder-style='color:#9c9c9c;font-size: 28rpx;' auto-height placeholder="提示文字" />
+    </view>
+    <view class='form-item flex flex-row flex-align-center'>
       <view class='item-name'>内容</view>
       <textarea class='item-textarea' placeholder-style='color:#9c9c9c;font-size: 28rpx;' auto-height placeholder="待办事项内容" />
     </view>
